@@ -114,9 +114,16 @@ void loop() {
   tFinalB=millis();
   if((tFinalB-tInicialB)>=1500){
     Blynk.run();
-    tInicialB=millis();
-    
+    tInicialB=millis();  
   }
+  ///////////////////////////////////////////////////////////////////////  
+  //Pino reservado para o controle de uso da temperatura pelo Blynk
+  if(digitalRead(D4)==HIGH){
+       somLigado=false;
+    }else{
+      somLigado=true;
+    }
+  
 }
 
 void executarAcao() 
